@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2f80345-f1b4-47b6-84e2-c49133a95e63" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/company/Main.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/TextEditor.java" afterPath="$PROJECT_DIR$/src/com/company/TextEditor.java" />
     </list>
     <ignored path="notepad --.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,9 +27,11 @@
       <file leaf-file-name="TextEditor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/TextEditor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="83" selection-start-line="18" selection-start-column="83" selection-end-line="18" selection-end-column="83" />
-              <folding />
+            <state relative-caret-position="345">
+              <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -573,12 +574,12 @@
       <updated>1478308631541</updated>
       <workItem from="1478308634203" duration="607000" />
       <workItem from="1478309506751" duration="3000" />
-      <workItem from="1478309563796" duration="90000" />
+      <workItem from="1478309563796" duration="569000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="700000" />
+    <option name="totallyTimeSpent" value="1179000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="14" y="29" width="1400" height="833" extended-state="0" />
@@ -634,9 +635,11 @@
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/TextEditor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="83" selection-start-line="18" selection-start-column="83" selection-end-line="18" selection-end-column="83" />
-          <folding />
+        <state relative-caret-position="345">
+          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

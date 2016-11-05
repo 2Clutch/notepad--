@@ -1,6 +1,7 @@
 package com.company;
 
 import javax.swing.*;
+import java.awt.event.ActionListener;
 
 public class TextEditor {
 
@@ -9,14 +10,19 @@ public class TextEditor {
 
         new TextEditor();
 
-        class TextEditor {
+        public class TextEditor extends JFrame implements ActionListener {
 
-            // defining Menus
+            // menu
             private JMenu file;
             private JMenu edit;
 
-            // defining Window
-            private JFrame editorWindow; // this window actually text editor window
+            // defining menu items
+            private JMenuItem new_file, open_file, save_file, saveas_file, delete_file;
+            private JMenuItem selectAll, cut, copy, paste;
+
+            private JFrame editorWindow;
+            
+            private JFrame window;
         }
     }
 }
