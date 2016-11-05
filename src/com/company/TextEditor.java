@@ -21,7 +21,7 @@ public class TextEditor {
             private JMenuItem selectAll, cut, copy, paste;
 
             private JFrame editorWindow;
-            
+
             private JFrame window;
         }
     }
