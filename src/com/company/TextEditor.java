@@ -1,16 +1,17 @@
 package com.company;
+//package texteditor;
 
+import java.awt.event.ActionEvent;
 import javax.swing.*;
 import java.awt.event.ActionListener;
 
-public class TextEditor {
+    
 
+public class TextEditor extends JFrame implements ActionListener {
+            
     public static void main(String[] args) {
-	// write your code here
-
-        new TextEditor();
-
-        public class TextEditor extends JFrame implements ActionListener {
+	 new TextEditor();
+    }
 
             // menu
             private JMenu file;
@@ -23,6 +24,10 @@ public class TextEditor {
             private JFrame editorWindow;
 
             private JFrame window;
-        }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-}
+}    
+
