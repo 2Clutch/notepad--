@@ -6,7 +6,7 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
+import java.io.*;
 
 
 public class TextEditor extends JFrame implements ActionListener {
@@ -59,10 +59,11 @@ public class TextEditor extends JFrame implements ActionListener {
         return textArea;
     }
 
-    public void setTextArea(JTextArea text){
+    public void setTextArea(JTextArea text) {
         textArea = text;
     }
-    public TextEditor(){
+
+    public TextEditor() {
         super("TextEditor");
         fileMenu();
         editMenu();
@@ -137,7 +138,7 @@ public class TextEditor extends JFrame implements ActionListener {
     }
 
     //adding items to edit menu
-    private void editMenu(){
+    private void editMenu() {
 
         edit = new JMenu("Edit");
 
@@ -192,6 +193,36 @@ public class TextEditor extends JFrame implements ActionListener {
         edit.add(cut);
     }
 
+    //method for saving files
+    private void saveFile(File filename) {
+
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
+            writer.write(textArea.getText());
+            writer.close();
+            saved = true;
+            window.setTitle("JavaText - " + filename.getName());
+        }
+
+        catch(IOException err) {
+            err.printStackTrace();
+        }
+    }
+
+    //method for opening files
+    private void openFile(File filename) {
+        try {
+            openedFile = filename;
+            FileReader reader = new FileReader(filename);
+            textArea.read(reader, null);
+            opened = true;
+            window.setTitle("JavaEdit - " + filename.getName());
+        }
+
+        catch(IOException err) {
+            err.printStackTrace();
+        }
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
