@@ -59,6 +59,83 @@ public class TextEditor extends JFrame implements ActionListener {
         return textArea;
     }
 
+    public void setTextArea(JTextArea text){
+        textArea = text;
+    }
+    public TextEditor(){
+        super("TextEditor");
+        fileMenu();
+        editMenu();
+        createTextArea();
+        createEditorWindow();
+    }
+
+    private void fileMenu() {
+
+        //Create File Menu
+        file = new JMenu("File");
+        file.setPreferredSize(new Dimension(55, 30));
+        file.setFont(new Font("File", Font.PLAIN, 25));
+
+        //Add file menu items
+        newFile = new JMenuItem("New");
+
+        newFile.addActionListener(this);
+
+        newFile.setPreferredSize(new Dimension(150, 30));
+
+        newFile.setEnabled(true);
+
+        newFile.setFont(new Font("New", Font.PLAIN, 25));
+
+        open = new JMenuItem("Open");
+
+        open.addActionListener(this);
+
+        open.setPreferredSize(new Dimension(150, 30));
+
+        open.setEnabled(true);
+
+        open.setFont(new Font("Open", Font.PLAIN, 25));
+
+        save = new JMenuItem("Save");
+
+        save.addActionListener(this);
+
+        save.setPreferredSize(new Dimension(150, 30));
+
+        save.setEnabled(true);
+
+        save.setFont(new Font("Save", Font.PLAIN, 25));
+
+        saveAs = new JMenuItem("Save As");
+
+        saveAs.addActionListener(this);
+
+        saveAs.setPreferredSize(new Dimension(150, 30));
+
+        saveAs.setEnabled(true);
+
+        saveAs.setFont(new Font("Save As", Font.PLAIN, 25));
+
+        delete = new JMenuItem("Delete");
+
+        delete.addActionListener(this);
+
+        delete.setPreferredSize(new Dimension(150, 30));
+
+        delete.setEnabled(true);
+
+        delete.setFont(new Font("Delete", Font.PLAIN, 25));
+
+        //Adding items to menu
+        file.add(newFile);
+        file.add(open);
+        file.add(save);
+        file.add(saveAs);
+        file.add(delete);
+    }
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
