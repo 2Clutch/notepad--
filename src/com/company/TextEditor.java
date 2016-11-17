@@ -8,8 +8,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
 
-import static com.sun.tools.javac.jvm.ByteCodes.new_;
-
 
 public class TextEditor extends JFrame implements ActionListener {
 
@@ -248,7 +246,9 @@ public class TextEditor extends JFrame implements ActionListener {
             writer.close();
             saved = true;
             window.setTitle("JavaText - " + filename.getName());
-        } catch (IOException err) {
+        }
+
+        catch (IOException err) {
             err.printStackTrace();
         }
     }
@@ -262,7 +262,9 @@ public class TextEditor extends JFrame implements ActionListener {
             textArea.read(reader, null);
             opened = true;
             window.setTitle("JavaEdit - " + filename.getName());
-        } catch (IOException err) {
+        }
+
+        catch (IOException err) {
             err.printStackTrace();
         }
     }
@@ -278,7 +280,9 @@ public class TextEditor extends JFrame implements ActionListener {
             open.showOpenDialog(null);
             File file = open.getSelectedFile();
             openFile(file);
-        } else if (e.getSource() == save) {
+        }
+
+        else if (e.getSource() == save) {
             JFileChooser save = new JFileChooser();
             File filename = save.getSelectedFile();
 
@@ -312,7 +316,9 @@ public class TextEditor extends JFrame implements ActionListener {
                 if (confirmationResult == JOptionPane.YES_OPTION) {
                     saveFile(filename);
                 }
-            } else {
+            }
+
+            else {
                 saveFile(filename);
             }
         }
