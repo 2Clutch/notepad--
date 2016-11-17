@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
 
+import static com.sun.tools.javac.jvm.ByteCodes.new_;
+
 
 public class TextEditor extends JFrame implements ActionListener {
 
@@ -204,7 +206,7 @@ public class TextEditor extends JFrame implements ActionListener {
 
     private JTextArea createTextArea() {
 
-        textBorder = BorderFactory.createBevelBorder(0, Color.WHITE, Color.WHITE);
+        textBorder = BorderFactory.createBevelBorder(0, Color.BLACK, Color.BLACK);
 
         textArea = new JTextArea(40, 60);
 
@@ -221,7 +223,7 @@ public class TextEditor extends JFrame implements ActionListener {
         return textArea;
     }
 
-    private  JFrame createEditorWindow() {
+    private JFrame createEditorWindow() {
         editorWindow = new JFrame("TextEditor");
         editorWindow.setVisible(true);
         editorWindow.setExtendedState(Frame.MAXIMIZED_BOTH);
@@ -246,9 +248,7 @@ public class TextEditor extends JFrame implements ActionListener {
             writer.close();
             saved = true;
             window.setTitle("JavaText - " + filename.getName());
-        }
-
-        catch(IOException err) {
+        } catch (IOException err) {
             err.printStackTrace();
         }
     }
@@ -262,17 +262,79 @@ public class TextEditor extends JFrame implements ActionListener {
             textArea.read(reader, null);
             opened = true;
             window.setTitle("JavaEdit - " + filename.getName());
-        }
-
-        catch(IOException err) {
+        } catch (IOException err) {
             err.printStackTrace();
         }
     }
 
-    @Override
-    public void actionPerformed(ActionEvent event) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        
-    }
-}    
+    // method to perform a specific action
+    public void actionPerformed(ActionEvent e) {
 
+        if (e.getSource() == newFile)
+            new TextEditor();
+
+        else if (e.getSource() == open) {
+            JFileChooser open = new JFileChooser();
+            open.showOpenDialog(null);
+            File file = open.getSelectedFile();
+            openFile(file);
+        } else if (e.getSource() == save) {
+            JFileChooser save = new JFileChooser();
+            File filename = save.getSelectedFile();
+
+            if (opened == false && saved == false) {
+                save.showSaveDialog(null);
+                int confirmationResult;
+
+                if (filename.exists()) {
+                    confirmationResult = JOptionPane.showConfirmDialog(save, "Replace existing file?");
+
+                    if (confirmationResult == JOptionPane.YES_OPTION) {
+                        saveFile(filename);
+                    }
+                }
+
+                else {
+                    saveFile(filename);
+                }
+            }
+        }
+
+        else if (e.getSource() == saveAs) {
+            JFileChooser saveAs = new JFileChooser();
+            saveAs.showSaveDialog(null);
+            File filename = saveAs.getSelectedFile();
+            int confirmationResult;
+
+            if (filename.exists()) {
+                confirmationResult = JOptionPane.showConfirmDialog(saveAs, "Replace existing file?");
+
+                if (confirmationResult == JOptionPane.YES_OPTION) {
+                    saveFile(filename);
+                }
+            } else {
+                saveFile(filename);
+            }
+        }
+
+        else if (e.getSource() == delete) {
+            System.exit(0);
+        }
+
+        else if (e.getSource() == selectAll) {
+            textArea.selectAll();
+        }
+
+        else if (e.getSource() == copy) {
+            textArea.copy();
+        }
+
+        else if (e.getSource() == paste) {
+            textArea.paste();
+        }
+
+        else if (e.getSource() == cut) {
+            textArea.cut();
+        }
+    }
+}
