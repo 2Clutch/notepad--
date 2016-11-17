@@ -27,8 +27,8 @@
       <file leaf-file-name="TextEditor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/TextEditor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="224" column="5" selection-start-line="224" selection-start-column="5" selection-end-line="224" selection-end-column="5" />
+            <state relative-caret-position="265">
+              <caret line="204" column="0" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#323#324#0" expanded="true" />
@@ -577,12 +577,12 @@
       <workItem from="1478308634203" duration="607000" />
       <workItem from="1478309506751" duration="3000" />
       <workItem from="1478309563796" duration="617000" />
-      <workItem from="1479349863985" duration="1913000" />
+      <workItem from="1479349863985" duration="2067000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3140000" />
+    <option name="totallyTimeSpent" value="3294000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="14" y="29" width="1400" height="833" extended-state="0" />
@@ -662,8 +662,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/TextEditor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="224" column="5" selection-start-line="224" selection-start-column="5" selection-end-line="224" selection-end-column="5" />
+        <state relative-caret-position="265">
+          <caret line="204" column="0" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#323#324#0" expanded="true" />

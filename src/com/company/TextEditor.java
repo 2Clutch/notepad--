@@ -193,6 +193,25 @@ public class TextEditor extends JFrame implements ActionListener {
         edit.add(cut);
     }
 
+    private JTextArea createTextArea() {
+
+        textBorder = BorderFactory.createBevelBorder(0, Color.WHITE, Color.WHITE);
+
+        textArea = new JTextArea(40, 60);
+
+        textArea.setEditable(true);
+
+        textArea.setBorder(BorderFactory.createCompoundBorder(textBorder, BorderFactory.createEmptyBorder(2, 5, 0, 0)));
+
+        textFont = new Font("Times New Roman", 15, 20);
+
+        textArea.setFont(textFont);
+
+        scroll = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+
+        return textArea;
+    }
+
     //method for saving files
     private void saveFile(File filename) {
 
@@ -211,6 +230,7 @@ public class TextEditor extends JFrame implements ActionListener {
 
     //method for opening files
     private void openFile(File filename) {
+
         try {
             openedFile = filename;
             FileReader reader = new FileReader(filename);
