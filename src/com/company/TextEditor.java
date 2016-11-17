@@ -71,6 +71,15 @@ public class TextEditor extends JFrame implements ActionListener {
         createEditorWindow();
     }
 
+    // creating main menu
+    private JMenuBar createMenuBar() {
+        JMenuBar menuBar = new JMenuBar();
+        setJMenuBar(menuBar);
+        menuBar.add(file);
+        menuBar.add(edit);
+        return menuBar;
+    }
+
     private void fileMenu() {
 
         //Create File Menu
@@ -210,6 +219,22 @@ public class TextEditor extends JFrame implements ActionListener {
         scroll = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 
         return textArea;
+    }
+
+    private void createEditorWindow() {
+        editorWindow = new JFrame("TextEditor");
+        editorWindow.setVisible(true);
+        editorWindow.setExtendedState(Frame.MAXIMIZED_BOTH);
+        editorWindow.setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        //create menu bar
+        editorWindow.setJMenuBar(createMenuBar());
+        editorWindow.add(scroll, BorderLayout.CENTER);
+        editorWindow.pack();
+
+        //application on center of screen
+        editorWindow.setLocationRelativeTo(null);
+        return editorWindow;
     }
 
     //method for saving files
