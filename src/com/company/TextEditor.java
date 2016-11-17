@@ -221,7 +221,7 @@ public class TextEditor extends JFrame implements ActionListener {
         return textArea;
     }
 
-    private void createEditorWindow() {
+    private  JFrame createEditorWindow() {
         editorWindow = new JFrame("TextEditor");
         editorWindow.setVisible(true);
         editorWindow.setExtendedState(Frame.MAXIMIZED_BOTH);
@@ -270,8 +270,9 @@ public class TextEditor extends JFrame implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent event) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 }    
 
