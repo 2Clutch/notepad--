@@ -136,6 +136,62 @@ public class TextEditor extends JFrame implements ActionListener {
         file.add(delete);
     }
 
+    //adding items to edit menu
+    private void editMenu(){
+
+        edit = new JMenu("Edit");
+
+        edit.setPreferredSize(new Dimension(55, 30));
+
+        edit.setFont(new Font("Edit", Font.PLAIN, 25));
+
+        selectAll = new JMenuItem("Select All");
+
+        selectAll.addActionListener(this);
+
+        selectAll.setPreferredSize(new Dimension(150, 30));
+
+        selectAll.setEnabled(true);
+
+        selectAll.setFont(new Font("Select All", Font.PLAIN, 25));
+
+        copy = new JMenuItem("Copy");
+
+        copy.addActionListener(this);
+
+        copy.setPreferredSize(new Dimension(150, 30));
+
+        copy.setEnabled(true);
+
+        copy.setFont(new Font("Copy", Font.PLAIN, 25));
+
+        paste = new JMenuItem("Paste");
+
+        paste.addActionListener(this);
+
+        paste.setPreferredSize(new Dimension(150, 30));
+
+        paste.setEnabled(true);
+
+        paste.setFont(new Font("Paste", Font.PLAIN, 25));
+
+        cut = new JMenuItem("Cut");
+
+        cut.addActionListener(this);
+
+        cut.setPreferredSize(new Dimension(150, 30));
+
+        cut.setEnabled(true);
+
+        cut.setFont(new Font("Cut", Font.PLAIN, 25));
+
+        //Adding items to menu
+        edit.add(selectAll);
+        edit.add(copy);
+        edit.add(paste);
+        edit.add(cut);
+    }
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
