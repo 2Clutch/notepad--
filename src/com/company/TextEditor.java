@@ -33,7 +33,7 @@ public class TextEditor extends JFrame implements ActionListener {
 
     private JMenuItem customize; //define customize text
 
-     private JFrame cust;
+    private JFrame cust;
 
     private JComboBox jcomp1;
     private JComboBox jcomp2;
@@ -43,7 +43,6 @@ public class TextEditor extends JFrame implements ActionListener {
     private JLabel jcomp6;
     private JLabel jcomp7;
     private JFrame frame;
-
 
 
     private JMenuItem cut; //define cut text
@@ -70,14 +69,16 @@ public class TextEditor extends JFrame implements ActionListener {
 
     private File openedFile;
 
+
     public JTextArea getTextArea() {
+
         return textArea;
     }
+
 
     public void setTextArea(JTextArea text) {
         textArea = text;
     }
-
 
 
     public TextEditor() {
@@ -247,34 +248,20 @@ public class TextEditor extends JFrame implements ActionListener {
 
         textArea.setFont(textFont);
 
-
-
-
-
-
-        //scroll = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-
-
-
-
         return textArea;
     }
 
-    private JFrame createEditorWindow() {
 
+    private JFrame createEditorWindow() {
 
         JScrollPane scrollPane = new JScrollPane(textArea);
         TextLineNumber tln = new TextLineNumber(textArea);
-        scrollPane.setRowHeaderView( tln );
-
-
+        scrollPane.setRowHeaderView(tln);
 
         editorWindow = new JFrame("TextEditor");
         editorWindow.setVisible(true);
         editorWindow.setExtendedState(Frame.MAXIMIZED_BOTH);
         editorWindow.setDefaultCloseOperation(EXIT_ON_CLOSE);
-
-
 
         //create menu bar
         editorWindow.setJMenuBar(createMenuBar());
@@ -287,76 +274,63 @@ public class TextEditor extends JFrame implements ActionListener {
         return editorWindow;
     }
 
+    public void MyPanel() {
+
+        frame = new JFrame("Customize");
+        frame.setDefaultCloseOperation(frame.DISPOSE_ON_CLOSE);
+        frame.getContentPane();
+        frame.pack();
+        frame.setSize(435, 266);
+        frame.setVisible(true);
 
 
+        //construct preComponents
+        String[] jcomp1Items = {"Black", "White", "Gray", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"};
+        String[] jcomp2Items = {"Black", "White", "Gray", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"};
+        String[] jcomp5Items = {"Regular Document", "Java", "C/C++", "Assembly", "HTML"};
 
-        public void MyPanel() {
+        //construct components
+        jcomp1 = new JComboBox(jcomp1Items);
+        jcomp2 = new JComboBox(jcomp2Items);
+        jcomp3 = new JLabel("Background Color");
+        jcomp4 = new JLabel("Text Color");
+        jcomp5 = new JComboBox(jcomp5Items);
+        jcomp6 = new JLabel("Color Scheme");
+        jcomp7 = new JLabel("Various ways to customize Notepad - -");
 
-            frame = new JFrame ("Customize");
-            frame.setDefaultCloseOperation (frame.DISPOSE_ON_CLOSE);
-            frame.getContentPane();
-            frame.pack();
-            frame.setSize(435,266);
-            frame.setVisible (true);
+        //adjust size and set layout
+        frame.setPreferredSize(new Dimension(435, 266));
+        frame.setLayout(null);
 
+        //add components
+        frame.add(jcomp1);
+        frame.add(jcomp2);
+        frame.add(jcomp3);
+        frame.add(jcomp4);
+        frame.add(jcomp5);
+        frame.add(jcomp6);
+        frame.add(jcomp7);
 
-            //construct preComponents
-            String[] jcomp1Items = {"Black", "White", "Gray", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"};
-            String[] jcomp2Items = {"Black", "White", "Gray", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"};
-            String[] jcomp5Items = {"Regular Document", "Java", "C/C++", "Assembly", "HTML"};
-
-            //construct components
-            jcomp1 = new JComboBox (jcomp1Items);
-            jcomp2 = new JComboBox (jcomp2Items);
-            jcomp3 = new JLabel ("Background Color");
-            jcomp4 = new JLabel ("Text Color");
-            jcomp5 = new JComboBox (jcomp5Items);
-            jcomp6 = new JLabel ("Color Scheme");
-            jcomp7 = new JLabel ("Various ways to customize Notepad - -");
-
-            //adjust size and set layout
-            frame.setPreferredSize (new Dimension (435, 266));
-            frame.setLayout (null);
-
-            //add components
-
-            frame.add (jcomp1);
-            frame.add (jcomp2);
-            frame.add (jcomp3);
-            frame.add (jcomp4);
-            frame.add (jcomp5);
-            frame.add (jcomp6);
-            frame.add (jcomp7);
-
-            //set component bounds (only needed by Absolute Positioning)
-            jcomp1.setBounds (70, 105, 100, 25);
-            jcomp2.setBounds (270, 105, 100, 25);
-            jcomp3.setBounds (60, 70, 130, 25);
-            jcomp4.setBounds (280, 70, 100, 25);
-            jcomp5.setBounds (130, 200, 175, 25);
-            jcomp6.setBounds (165, 165, 100, 25);
-            jcomp7.setBounds (75, 10, 290, 45);
+        //set component bounds (only needed by Absolute Positioning)
+        jcomp1.setBounds(70, 105, 100, 25);
+        jcomp2.setBounds(270, 105, 100, 25);
+        jcomp3.setBounds(60, 70, 130, 25);
+        jcomp4.setBounds(280, 70, 100, 25);
+        jcomp5.setBounds(130, 200, 175, 25);
+        jcomp6.setBounds(165, 165, 100, 25);
+        jcomp7.setBounds(75, 10, 290, 45);
 
 
-            jcomp1.setSelectedIndex(1);
-            jcomp1.addActionListener(this);
+        jcomp1.setSelectedIndex(1);
+        jcomp1.addActionListener(this);
 
-            jcomp2.setSelectedIndex(1);
-            jcomp2.addActionListener(this);
+        jcomp2.setSelectedIndex(1);
+        jcomp2.addActionListener(this);
 
-            jcomp5.setSelectedIndex(1);
-            jcomp5.addActionListener(this);
+        jcomp5.setSelectedIndex(1);
+        jcomp5.addActionListener(this);
 
-
-        }
-
-
-
-
-
-
-
-
+    }
 
 
     //method for saving files
