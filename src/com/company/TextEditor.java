@@ -157,22 +157,22 @@ public class TextEditor extends JFrame implements ActionListener {
 
         customize.setFont(new Font("Customize", Font.PLAIN, 25));
 
-        delete = new JMenuItem("Delete");
+        delete = new JMenuItem("Delete Selected");
 
         delete.addActionListener(this);
 
-        delete.setPreferredSize(new Dimension(150, 30));
+        delete.setPreferredSize(new Dimension(220, 30));
 
         delete.setEnabled(true);
 
-        delete.setFont(new Font("Delete", Font.PLAIN, 25));
+        delete.setFont(new Font("Del. Selected", Font.PLAIN, 25));
 
         //Adding items to menu
         file.add(newFile);
         file.add(open);
         file.add(save);
         file.add(saveAs);
-        file.add(delete);
+        //file.add(delete);
         file.add(customize);
     }
 
@@ -231,6 +231,7 @@ public class TextEditor extends JFrame implements ActionListener {
         edit.add(selectAll);
         edit.add(copy);
         edit.add(paste);
+        edit.add(delete);
         edit.add(cut);
     }
 
@@ -539,7 +540,7 @@ public class TextEditor extends JFrame implements ActionListener {
         }
 
         else if (e.getSource() == delete) {
-            System.exit(0);
+            textArea.replaceSelection("");
         }
 
         else if (e.getSource() == selectAll) {
