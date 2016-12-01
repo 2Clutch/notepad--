@@ -252,13 +252,23 @@ public class TextEditor extends JFrame implements ActionListener {
 
 
 
-        scroll = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        //scroll = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+
+
 
 
         return textArea;
     }
 
     private JFrame createEditorWindow() {
+
+
+        JScrollPane scrollPane = new JScrollPane(textArea);
+        TextLineNumber tln = new TextLineNumber(textArea);
+        scrollPane.setRowHeaderView( tln );
+
+
+
         editorWindow = new JFrame("TextEditor");
         editorWindow.setVisible(true);
         editorWindow.setExtendedState(Frame.MAXIMIZED_BOTH);
@@ -268,7 +278,8 @@ public class TextEditor extends JFrame implements ActionListener {
 
         //create menu bar
         editorWindow.setJMenuBar(createMenuBar());
-        editorWindow.add(scroll, BorderLayout.CENTER);
+        //editorWindow.add(scroll, BorderLayout.CENTER);
+        editorWindow.add(scrollPane);
         editorWindow.pack();
 
         //application on center of screen
