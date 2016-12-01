@@ -69,12 +69,9 @@ public class TextEditor extends JFrame implements ActionListener {
 
     private File openedFile;
 
-
     public JTextArea getTextArea() {
-
         return textArea;
     }
-
 
     public void setTextArea(JTextArea text) {
         textArea = text;
@@ -276,7 +273,6 @@ public class TextEditor extends JFrame implements ActionListener {
     }
 
     public void MyPanel() {
-
         frame = new JFrame("Customize");
         frame.setDefaultCloseOperation(frame.DISPOSE_ON_CLOSE);
         frame.getContentPane();
@@ -369,15 +365,15 @@ public class TextEditor extends JFrame implements ActionListener {
     // method to perform a specific action
     public void actionPerformed(ActionEvent e) {
 
-        if (e.getSource() == newFile)
+        if (e.getSource() == newFile) {
             new TextEditor();
+        }
 
         else if (e.getSource() == open) {
             JFileChooser open = new JFileChooser();
             open.showOpenDialog(null);
             File file = open.getSelectedFile();
             openFile(file);
-
         }
 
         else if (e.getSource() == save) {
@@ -421,10 +417,7 @@ public class TextEditor extends JFrame implements ActionListener {
         }
 
         else if (e.getSource() == customize) {
-
             MyPanel();
-
-
         }
 
         else if (e.getSource() == jcomp1) {
@@ -435,34 +428,42 @@ public class TextEditor extends JFrame implements ActionListener {
                 case "Black":
                     textArea.setBackground(Color.BLACK);
                     break;
+
                 case "White":
                     textArea.setBackground(Color.WHITE);
                     break;
+
                 case "Gray":
                     textArea.setBackground(Color.GRAY);
                     break;
+
                 case "Red":
                     textArea.setBackground(Color.RED);
                     break;
+
                 case "Orange":
                     textArea.setBackground(Color.ORANGE);
                     break;
+
                 case "Yellow":
                     textArea.setBackground(Color.YELLOW);
                     break;
+
                 case "Green":
                     textArea.setBackground(Color.GREEN);
                     break;
+
                 case "Blue":
                     textArea.setBackground(Color.BLUE);
                     break;
+
                 case "Purple":
                     textArea.setBackground(Color.MAGENTA);
                     break;
+
                 case "Pink":
                     textArea.setBackground(Color.PINK);
                     break;
-
             }
         }
 
@@ -474,34 +475,42 @@ public class TextEditor extends JFrame implements ActionListener {
                 case "Black":
                     textArea.setForeground(Color.BLACK);
                     break;
+
                 case "White":
                     textArea.setForeground(Color.WHITE);
                     break;
+
                 case "Gray":
                     textArea.setForeground(Color.GRAY);
                     break;
+
                 case "Red":
                     textArea.setForeground(Color.RED);
                     break;
+
                 case "Orange":
                     textArea.setForeground(Color.ORANGE);
                     break;
+
                 case "Yellow":
                     textArea.setForeground(Color.YELLOW);
                     break;
+
                 case "Green":
                     textArea.setForeground(Color.GREEN);
                     break;
+
                 case "Blue":
                     textArea.setForeground(Color.BLUE);
                     break;
+
                 case "Purple":
                     textArea.setForeground(Color.MAGENTA);
                     break;
+
                 case "Pink":
                     textArea.setForeground(Color.PINK);
                     break;
-
             }
         }
 
@@ -514,14 +523,17 @@ public class TextEditor extends JFrame implements ActionListener {
                 case "Regular Document":
                     textArea.setBackground(Color.WHITE);
                     textArea.setForeground(Color.BLACK);
+
                 case "Java":
                     textArea.setBackground(Color.DARK_GRAY);
                     textArea.setForeground(Color.WHITE);
                     String text = textArea.getText();
+
                     //if(textArea.getText(0,4).equals("from")){
 
                         //textArea.setBackground(Color.RED);
                     //}
+
                     break;
                 case "C/C++":
                     textArea.setBackground(Color.DARK_GRAY);
@@ -535,7 +547,6 @@ public class TextEditor extends JFrame implements ActionListener {
                     textArea.setBackground(Color.DARK_GRAY);
                     textArea.setForeground(Color.WHITE);
                     break;
-
             }
         }
 
@@ -558,6 +569,5 @@ public class TextEditor extends JFrame implements ActionListener {
         else if (e.getSource() == cut) {
             textArea.cut();
         }
-
     }
 }
