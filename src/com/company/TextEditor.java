@@ -44,7 +44,6 @@ public class TextEditor extends JFrame implements ActionListener {
     private JLabel jcomp7;
     private JFrame frame;
 
-
     private JMenuItem cut; //define cut text
 
     private JMenuItem copy; //define copy text
@@ -263,6 +262,7 @@ public class TextEditor extends JFrame implements ActionListener {
 
         //create menu bar
         editorWindow.setJMenuBar(createMenuBar());
+
         //editorWindow.add(scroll, BorderLayout.CENTER);
         editorWindow.add(scrollPane);
         editorWindow.pack();
@@ -279,7 +279,6 @@ public class TextEditor extends JFrame implements ActionListener {
         frame.pack();
         frame.setSize(435, 266);
         frame.setVisible(true);
-
 
         //construct preComponents
         String[] jcomp1Items = {"Black", "White", "Gray", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"};
@@ -528,21 +527,18 @@ public class TextEditor extends JFrame implements ActionListener {
                     textArea.setBackground(Color.DARK_GRAY);
                     textArea.setForeground(Color.WHITE);
                     String text = textArea.getText();
-
-                    //if(textArea.getText(0,4).equals("from")){
-
-                        //textArea.setBackground(Color.RED);
-                    //}
-
                     break;
+
                 case "C/C++":
                     textArea.setBackground(Color.DARK_GRAY);
                     textArea.setForeground(Color.WHITE);
                     break;
+
                 case "Assembly":
                     textArea.setBackground(Color.DARK_GRAY);
                     textArea.setForeground(Color.WHITE);
                     break;
+
                 case "HTML":
                     textArea.setBackground(Color.DARK_GRAY);
                     textArea.setForeground(Color.WHITE);
