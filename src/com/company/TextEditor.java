@@ -31,7 +31,7 @@ public class TextEditor extends JFrame implements ActionListener {
 
     private JMenuItem selectAll; //define select all text
 
-    private JMenuItem customize; //define customize text
+    private JMenuItem customize; //define Customize text
 
     private JFrame cust;
 
@@ -272,7 +272,7 @@ public class TextEditor extends JFrame implements ActionListener {
         return editorWindow;
     }
 
-    public void MyPanel() {
+    public void myPanel() {
         frame = new JFrame("Customize");
         frame.setDefaultCloseOperation(frame.DISPOSE_ON_CLOSE);
         frame.getContentPane();
@@ -292,7 +292,7 @@ public class TextEditor extends JFrame implements ActionListener {
         jcomp4 = new JLabel("Text Color");
         jcomp5 = new JComboBox(jcomp5Items);
         jcomp6 = new JLabel("Color Scheme");
-        jcomp7 = new JLabel("Various ways to customize Notepad - -");
+        jcomp7 = new JLabel("Various ways to Customize Notepad - -");
 
         //adjust size and set layout
         frame.setPreferredSize(new Dimension(435, 266));
@@ -416,7 +416,7 @@ public class TextEditor extends JFrame implements ActionListener {
         }
 
         else if (e.getSource() == customize) {
-            MyPanel();
+            myPanel();
         }
 
         else if (e.getSource() == jcomp1) {
