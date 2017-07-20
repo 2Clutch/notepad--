@@ -342,7 +342,7 @@ public class TextEditor extends JFrame implements ActionListener {
     }
 
     // method to perform a specific action
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed (ActionEvent e) {
 
         if (e.getSource() == newFile) {
             new TextEditor();
@@ -359,7 +359,7 @@ public class TextEditor extends JFrame implements ActionListener {
             JFileChooser save = new JFileChooser();
             File filename = save.getSelectedFile();
 
-            if (opened == false && saved == false) {
+            if (!opened && !saved) {
                 save.showSaveDialog(null);
                 int confirmationResult;
 
@@ -493,7 +493,7 @@ public class TextEditor extends JFrame implements ActionListener {
             }
         }
 
-        //{"Regular Document", "Java", "C/C++", "Assembly", "HTML"};
+        // {"Regular Document", "Java", "C/C++", "Assembly", "HTML"};
         else if (e.getSource() == jcomp5) {
             JComboBox cb = (JComboBox) e.getSource();
             String color = (String) cb.getSelectedItem();
