@@ -8,7 +8,7 @@ notepad-- is a basic text editor made with the features new, save, edit, and del
 
 > A .jar file exist.
 
-> Run it how you you would run any .jar file.
+> Run it how you would run any .jar file.
 
 
 
