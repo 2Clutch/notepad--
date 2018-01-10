@@ -1,7 +1,5 @@
 # notepad-- 
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/50845e3260c74a47ab5cb427aaaf10ae)](https://www.codacy.com/app/maximillianaza/notepad--?utm_source=github.com&utm_medium=referral&utm_content=2Clutch/notepad--&utm_campaign=badger)
-
 notepad-- is a basic text editor made with the features new, save, edit, and delete.
 
 |||| How to Run ||||
