@@ -1,4 +1,6 @@
-# notepad-- 
+# notepad--
+
+[![StackShare](https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/2Clutch/knowledge-purse)
 
 notepad-- is a basic text editor made with the features new, save, edit, and delete.
 
